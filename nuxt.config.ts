@@ -5,6 +5,9 @@ export default defineNuxtConfig({
 	app: {
 		baseURL: '/cinema/',
 	},
+	dir: {
+		public: '/cinema/',
+	},
 	modules: [
 		'nuxt-icon',
 		[
