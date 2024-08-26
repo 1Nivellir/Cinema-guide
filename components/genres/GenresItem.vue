@@ -2,7 +2,7 @@
 	<li class="genres__item">
 		<NuxtLink :to="`/genres/${genres}`" class="genres__link"></NuxtLink>
 		<img
-			:src="`/img/genres/${genres}.jpg`"
+			:src="`/cinema/img/genres/${genres}.jpg`"
 			alt=""
 			class="genres__img"
 			v-if="genres"
