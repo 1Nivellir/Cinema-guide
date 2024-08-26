@@ -3,7 +3,7 @@ export default defineNuxtConfig({
 	devtools: { enabled: false },
 	css: ['~/assets/scss/main.scss'],
 	app: {
-		baseURL: '/cinema',
+		baseURL: '/cinema/',
 	},
 	modules: [
 		'nuxt-icon',
