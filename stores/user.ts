@@ -21,7 +21,7 @@ export const useUserStore = defineStore('user', () => {
 				return true
 			}
 		} catch (error: any) {
-			if (error.status === 400) {
+			if (error.status === 409) {
 				return 'Такой пользователь уже существует'
 			} else {
 				return 'Не предвиденная ошибка'

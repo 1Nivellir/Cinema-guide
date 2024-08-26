@@ -11,6 +11,7 @@ export function useCustomFetch<T extends string>(
 		credentials: 'include',
 		headers: {
 			'Content-type': 'application/json',
+			Authorization: 'Bearer ' + config.token,
 		},
 	}
 	const params = defu(options, defaults)

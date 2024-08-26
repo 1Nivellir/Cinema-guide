@@ -1,11 +1,3 @@
-<script lang="ts" setup>
-const userStore = useUserStore()
-await useAsyncData(
-	'user',
-	() => (userStore.getFavorites(), userStore.getProfile())
-)
-</script>
-
 <template>
 	<div>
 		<NuxtLayout>
@@ -13,5 +5,3 @@ await useAsyncData(
 		</NuxtLayout>
 	</div>
 </template>
-
-<style lang="scss"></style>

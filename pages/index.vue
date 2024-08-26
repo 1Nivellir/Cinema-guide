@@ -7,6 +7,7 @@
 
 <script lang="ts" setup>
 const filmStore = useFilmsStore()
+const userStore = useUserStore()
 provide('showBtn', true)
 provide('showBtnCardOnCard', false)
 provide('notShow', '')
@@ -16,8 +17,12 @@ definePageMeta({
 useHead({
 	title: 'Главная',
 })
-await useAsyncData('films', () => (filmStore.getRandom(), filmStore.getTop10()))
+await useAsyncData('filmsHome', () =>
+	Promise.all([filmStore.getRandom(), filmStore.getTop10()])
+)
+
+onMounted(async () => {
+	await Promise.all([userStore.getProfile(), userStore.getFavorites()])
+})
 const randomFilm = computed(() => useFilmsStore().oneFilm)
 </script>
-
-<style></style>
