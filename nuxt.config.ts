@@ -4,9 +4,7 @@ export default defineNuxtConfig({
 	css: ['~/assets/scss/main.scss'],
 	app: {
 		baseURL: '/cinema/',
-	},
-	dir: {
-		public: '/cinema/',
+		cdnURL: '/cinema/',
 	},
 	modules: [
 		'nuxt-icon',
