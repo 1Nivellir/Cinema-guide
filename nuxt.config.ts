@@ -12,9 +12,10 @@ export default defineNuxtConfig({
 	},
 	pwa: {
 		manifest: {
-			name: 'My PWA App',
-			short_name: 'PWA',
-			description: 'Моё первое PWA приложение на Nuxt 3',
+			name: 'Cinema',
+			short_name: 'Cinema-guide',
+			description:
+				'Cinema Guide - это веб-приложение для поиска и просмотра информации о фильмах.',
 			theme_color: '#ffffff',
 			background_color: '#ffffff',
 			display: 'standalone',

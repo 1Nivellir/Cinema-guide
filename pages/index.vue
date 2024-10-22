@@ -36,6 +36,7 @@ const randomFilm = computed(() => useFilmsStore().oneFilm)
 	bottom: 20px;
 	right: 20px;
 	left: 20px;
+	border: none;
 	padding: 10px 20px;
 	border-radius: 10px;
 	background: rgb(0, 95, 95);
