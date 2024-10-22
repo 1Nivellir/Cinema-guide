@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
 	devtools: { enabled: false },
 	css: ['~/assets/scss/main.scss'],
+	ssr: false,
 	app: {
 		head: {
 			link: [
