@@ -48,7 +48,7 @@ export default defineNuxtConfig({
 					},
 				},
 				{
-					urlPattern: /^https:\/\/test-pwa-pink\.vercel\.app\/.*/, // Все ресурсы с сайта
+					urlPattern: /^https:\/\/cinema-guide-five\.vercel\.app\/.*/, // Все ресурсы с сайта
 					handler: 'NetworkFirst', // Попытка сначала получить данные из сети
 					options: {
 						cacheName: 'pwa-cache',
