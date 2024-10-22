@@ -3,14 +3,61 @@ export default defineNuxtConfig({
 	devtools: { enabled: false },
 	css: ['~/assets/scss/main.scss'],
 	app: {
-		baseURL: '/cinema/',
 		head: {
 			link: [
 				{ rel: 'icon', type: 'image/x-icon', href: '/cinema/favicon.ico' },
 			],
 		},
 	},
+	pwa: {
+		manifest: {
+			name: 'My PWA App',
+			short_name: 'PWA',
+			description: 'Моё первое PWA приложение на Nuxt 3',
+			theme_color: '#ffffff',
+			background_color: '#ffffff',
+			display: 'standalone',
+			start_url: '/', // Начальная страница приложения
+			icons: [
+				{
+					src: '/icon-192x192.png', // Используем правильные .png иконки
+					sizes: '192x192',
+					type: 'image/png',
+				},
+				{
+					src: '/icon-512x512.png', // Иконка 512x512 для установки PWA
+					sizes: '512x512',
+					type: 'image/png',
+				},
+			],
+		},
+		workbox: {
+			// Настройка fallback для всех навигаций
+			navigateFallback: '/', // Перенаправляем на главную, если путь не кэширован
+			// Runtime кэширование
+			runtimeCaching: [
+				{
+					urlPattern: '/', // Главная страница
+					handler: 'NetworkFirst', // Попробовать загрузить из сети, если не удастся — из кэша
+					options: {
+						cacheName: 'pwa-cache',
+						expiration: {
+							maxAgeSeconds: 60 * 60 * 24 * 30, // Кэшировать на 30 дней
+						},
+					},
+				},
+				{
+					urlPattern: /^https:\/\/test-pwa-pink\.vercel\.app\/.*/, // Все ресурсы с сайта
+					handler: 'NetworkFirst', // Попытка сначала получить данные из сети
+					options: {
+						cacheName: 'pwa-cache',
+					},
+				},
+			],
+		},
+	},
 	modules: [
+		'@vite-pwa/nuxt',
 		'nuxt-icon',
 		[
 			'nuxt-swiper',

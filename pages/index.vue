@@ -1,5 +1,8 @@
 <template>
 	<div>
+		<button id="install-button" style="display: none">
+			Установить приложение
+		</button>
 		<CommonHero :film="randomFilm" />
 		<HomeContent />
 	</div>

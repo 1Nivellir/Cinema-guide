@@ -6,7 +6,7 @@
 			:key="link"
 			target="_blank"
 		>
-			<img :src="`/cinema/svg/${icon}.svg`" :alt="link" />
+			<img :src="`/svg/${icon}.svg`" :alt="link" />
 		</NuxtLink>
 	</div>
 </template>
